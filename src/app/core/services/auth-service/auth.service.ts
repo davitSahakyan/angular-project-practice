@@ -7,6 +7,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class AuthService implements OnInit {
   loginedUser: any;
+  loading: boolean;
 
   constructor(
     private http: HttpClient,
@@ -17,6 +18,7 @@ export class AuthService implements OnInit {
   ngOnInit() {}
 
   getUsers(user, type) {
+    this.loading = true;
     return this.http
       .get('https://login-34417.firebaseio.com/users.json')
       .subscribe((res) => {
@@ -29,8 +31,9 @@ export class AuthService implements OnInit {
             }
             break;
           case 'login':
+            this.loading = false;
+            alert('success');
             if (this.registeredUser(user, Object.values(res), type)) {
-              alert('success');
               this.loginedUser = this.registeredUser(
                 user,
                 Object.values(res),
@@ -72,5 +75,9 @@ export class AuthService implements OnInit {
 
   consoleSomething() {
     console.log('something');
+  }
+
+  getLoadingStatus() {
+    return this.loading;
   }
 }

@@ -24,13 +24,25 @@
         />
       </div>
     </div>
-    <button
-      type="submit"
-      class="btn btn-primary pointer"
-      [disabled]="loginForm.status === 'INVALID'"
-    >
-      Log in
-    </button>
+    <div>
+      <button
+        *ngIf="!loading"
+        type="submit"
+        class="btn btn-primary pointer"
+        [disabled]="loginForm.status === 'INVALID'"
+      >
+        Log in
+      </button>
+      <button *ngIf="loading" class="btn btn-primary" type="button" disabled>
+        <span
+          class="spinner-border spinner-border-sm"
+          role="status"
+          aria-hidden="true"
+        ></span>
+        Loading...
+      </button>
+    </div>
+
     <span (click)="goToRegistration()" class="pointer link-span"
       >Go to registeration page</span
     >

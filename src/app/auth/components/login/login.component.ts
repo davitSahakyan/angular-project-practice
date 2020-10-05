@@ -11,6 +11,7 @@ import { AuthService } from './../../../core/services/auth-service/auth.service'
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
+  loading: boolean = false;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -31,6 +32,7 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
     this.authService.getUsers(this.loginForm.value, 'login');
+    this.loading = this.authService.getLoadingStatus();
   }
 
   goToRegistration() {
