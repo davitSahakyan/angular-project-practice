@@ -1,0 +1,34 @@
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col" *ngFor="let title of titles">{{ title }}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let car of cars">
+      <td>{{ car[titles[0]] }}</td>
+      <td>{{ car[titles[1]] }}</td>
+      <td>{{ car[titles[2]] }}</td>
+      <td>{{ car[titles[3]] }}</td>
+      <td>{{ car[titles[4]] }}</td>
+      <td>{{ car[titles[5]] }}</td>
+    </tr>
+  </tbody>
+</table>
+<nav aria-label="...">
+  <ul class="pagination">
+    <li class="page-item disabled">
+      <a class="page-link" href="#" tabindex="-1" aria-disabled="true"
+        >Previous</a
+      >
+    </li>
+    <li class="page-item"><a class="page-link" href="#">1</a></li>
+    <li class="page-item active" aria-current="page">
+      <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+    </li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item">
+      <a class="page-link" href="#">Next</a>
+    </li>
+  </ul>
+</nav>
