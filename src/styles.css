@@ -1,1 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+.pointer {
+  cursor: pointer;
+}
+.link-span {
+  margin-left: 1em;
+}
+.title {
+  color: #007bff;
+}

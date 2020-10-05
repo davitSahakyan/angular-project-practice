@@ -1,0 +1,7 @@
+<button (click)="openUserInfo()">
+  user<i class="material-icons">arrow_drop_down</i>
+</button>
+<ul class="user-info-list" *ngIf="isUserInfoPartOpen">
+  <li>{{ userInfo.email }}</li>
+  <li>{{ userInfo.name }} {{ userInfo.surname }}</li>
+</ul>
