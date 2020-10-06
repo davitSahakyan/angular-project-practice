@@ -12,6 +12,9 @@ import { LoginComponent } from './auth/components/login/login.component';
 import { CarListComponent } from './pages/car-list/car-list.component';
 import { UserInfoComponent } from './auth/components/user-info/user-info.component';
 import { MainComponent } from './pages/main/main.component';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -29,6 +32,8 @@ import { MainComponent } from './pages/main/main.component';
     ReactiveFormsModule,
     PagesRoutingModule,
     HttpClientModule,
+    NoopAnimationsModule,
+    MatPaginatorModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
